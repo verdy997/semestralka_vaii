@@ -1,0 +1,102 @@
+.header{
+
+    background-repeat: repeat;
+    background-position: left;
+    padding: 4%;
+}
+
+body {
+    /*background-color: #343a40;*/
+    background-image: url("../img/unicorn.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+    background-position-y: 80px;
+
+}
+
+/*VECI CO SU SPOJENE S NAV-BAROM*/
+
+.navbar-nav {
+    margin-right: 25px;
+    margin-left: 20px;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+nav {
+    border-bottom: 1px solid grey;
+}
+
+
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
+
+
+.logo {
+    width: 30px;
+}
+
+
+
+/*VECI CO SU POD NAV-BAROM*/
+.underBar {
+    margin-top: 50px;
+}
+
+.underBar{
+    text-align: center;
+}
+
+
+/*VECI SPOJENE S FORMULAROM*/
+/*.form-row, .form-group{
+    margin-left: 23px;
+    margin-right: 5px;
+}
+*/
+
+
+.btn {
+    background-color: dimgray;
+    border-color: black;
+}
+
+/* TEXTY*/
+
+h1 {
+    color: whitesmoke;
+    margin: 50px;
+}
+
+.loremIpsum {
+    color: whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/*KONTAJNERY*/
+
+.container {
+    margin-top: 50px;
+}
+
+.textUnForm {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
