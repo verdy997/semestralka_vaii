@@ -16,9 +16,18 @@
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-nav" href="{{ route('home') }}">
-        <img class="logo" src="/img/logo.png" alt="logo" >
-    </a>
+    @auth
+        <a class="navbar-nav" href="{{ route('wall') }}">
+            <img class="logo" src="/img/logo.png" alt="logo" >
+        </a>
+    @endauth
+
+    @guest
+        <a class="navbar-nav" href="{{ route('home') }}">
+            <img class="logo" src="/img/logo.png" alt="logo" >
+        </a>
+    @endguest
+
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -29,17 +38,24 @@
         <!-- Links -->
         <ul class="navbar-nav ml-auto">
 
+            @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ auth()->user()->name }}</a>
+                </li>
+                <li class="nav-item">
+                    @csrf
+                    <a class="nav-link" href="{{ route('logOut') }}">Logout</a>
+                </li>
+            @endauth
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">Registration</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/information">Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logIn">Logout</a>
-            </li>
-
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logIn') }}">Log in</a>
+                </li>
+             @endguest
         </ul>
     </div>
 </nav>

@@ -1,6 +1,6 @@
 @extends('layouts.header')
 
 @section('content')
+WALL
 
-HOME
 @endsection
