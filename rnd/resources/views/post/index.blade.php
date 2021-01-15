@@ -9,7 +9,8 @@
                     <div class="textUnForm">
                         <b><label for="body" style="color: white">Write your post</label></b>
                     </div>
-                    <textarea class="form-control" name="body" id="body" cols="15" rows="5" placeholder="Write something"></textarea>
+                    <textarea class="form-control" name="body" id="body" cols="15" rows="5"
+                              placeholder="Write something"></textarea>
                     @error('body')
                     <div class="errorMessage">
                         {{ $message }}
@@ -21,19 +22,31 @@
                 </div>
             </form>
 
-            <div class >
+            <div class>
 
             </div>
             @if($post->count())
                 @foreach($post as $post)
-                    <div class="mb-4">
+                    <div class="postPckg">
                         <div class="bkgrPst">
                             <b><a href="" class="font-bold">{{ $post->user->name }}</a></b>
                             <span class="text-white text-sm">{{ $post->created_at->diffForHumans() }}</span>
-                            <b><p class="mb-4">{{ $post->body }}</p></b>
+                            <p class="mb-4">{{ $post->body }}</p>
+
+                            <div class="liunl">
+                                <form action="" method="post">
+                                    @csrf
+                                    <button type="submit" class="like">Like</button>
+                                </form>
+                                <form action="" method="post">
+                                    @csrf
+                                    <button type="submit" class="unlike">Unlike</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 @endforeach
+                <!–– TO DO LISTOVANIE STARSICH PRISPEVKOV -->
             @else
                 <p>There are no posts to show</p>
             @endif
