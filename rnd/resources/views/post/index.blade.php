@@ -29,8 +29,8 @@
                 @foreach($post as $post)
                     <div class="postPckg">
                         <div class="bkgrPst">
-                            <b><a href="" class="font-bold">{{ $post->user->name }}</a></b>
-                            <span class="text-white text-sm">{{ $post->created_at->diffForHumans() }}</span>
+                            <b><a href="" class="usrNm">{{ $post->user->name }}</a></b>
+                            <span class="date">{{ $post->created_at->diffForHumans() }}</span>
                             <p class="mb-4">{{ $post->body }}</p>
 
                             <div class="liunl">
