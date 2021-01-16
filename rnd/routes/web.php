@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LogOutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LogInController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\WallController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
@@ -33,6 +34,8 @@ Route::get('/wall', [WallController::class, 'index'])->name('wall');
 
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::post('/post', [PostController::class, 'store']);
+
+Route::post('/post/{post}/likes', [PostLikeController::class, 'store'])->name('post.likes');
 
 Route::get('/', function () {
     return view('auth.logIn');

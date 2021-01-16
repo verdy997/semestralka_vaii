@@ -12,7 +12,6 @@ class PostController extends Controller
         $post = Post::paginate(5); //collection
 
 
-
         return view('post.index',[
                 'post' => $post
         ]);

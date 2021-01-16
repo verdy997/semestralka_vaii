@@ -34,7 +34,7 @@
                             <p class="mb-4">{{ $post->body }}</p>
 
                             <div class="liunl">
-                                <form action="" method="post">
+                                <form action="{{ route('post.likes', $post->id) }}" method="post">
                                     @csrf
                                     <button type="submit" class="like">Like</button>
                                 </form>
@@ -42,6 +42,8 @@
                                     @csrf
                                     <button type="submit" class="unlike">Unlike</button>
                                 </form>
+
+                                <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count())}}</span>
                             </div>
                         </div>
                     </div>
