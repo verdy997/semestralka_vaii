@@ -7,7 +7,7 @@
 
 body {
     /*background-color: #343a40;*/
-    background-image: url("../img/jungle.jpg");
+    background-image: url("../img/vikings.jpg");
     background-repeat: no-repeat;
     background-color: black;
     background-position: center;
@@ -34,12 +34,9 @@ nav {
     color: white;
 }
 
-
 .logo {
     width: 30px;
 }
-
-
 
 /*VECI CO SU POD NAV-BAROM*/
 .underBar {
@@ -49,7 +46,6 @@ nav {
 .underBar{
     text-align: center;
 }
-
 
 /*VECI SPOJENE S FORMULAROM*/
 /*.form-row, .form-group{
@@ -146,17 +142,6 @@ p {
     font-weight: bold;
 }
 
-form .like {
-    float: left;
-    margin-right: 10px;
-
-}
-
-form .unlike {
-    float: left;
-    margin-left: 10px;
-}
-
 .usrNm {
     color: #1a202c;
     margin-right: 10px;
@@ -165,7 +150,6 @@ form .unlike {
 
 .date {
     color: lightgrey;
-
 }
 
 

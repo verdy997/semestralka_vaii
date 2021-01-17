@@ -36,6 +36,7 @@ Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::post('/post', [PostController::class, 'store']);
 
 Route::post('/post/{post}/likes', [PostLikeController::class, 'store'])->name('post.likes');
+Route::delete('/post/{post}/likes', [PostLikeController::class, 'destroy'])->name('post.likes');
 
 Route::get('/', function () {
     return view('auth.logIn');

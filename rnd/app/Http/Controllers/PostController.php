@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function  __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     public function index()
     {
-        $post = Post::paginate(5); //collection
 
+        $post = Post::with(['user', 'likes'])->paginate(5); //collection
 
         return view('post.index',[
                 'post' => $post

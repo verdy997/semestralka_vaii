@@ -34,16 +34,20 @@
                             <p class="mb-4">{{ $post->body }}</p>
 
                             <div class="liunl">
-                                <form action="{{ route('post.likes', $post->id) }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="like">Like</button>
-                                </form>
-                                <form action="" method="post">
-                                    @csrf
-                                    <button type="submit" class="unlike">Unlike</button>
-                                </form>
-
-                                <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count())}}</span>
+                                @if(!$post->likedBy(auth()->user()))
+                                    <form action="{{ route('post.likes', $post) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="like">Like</button>
+                                        <b><span style="color: green ">{{ $post->likes->count() }}</span></b>
+                                    </form>
+                                @else
+                                    <form action="{{ route('post.likes', $post) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="unlike">Unlike</button>
+                                        <b><span style="color: green ">{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count())}}</span></b>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>
