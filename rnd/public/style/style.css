@@ -118,28 +118,21 @@ p {
 }
 
 .liunl {
-    height: 25px;
+    height: 50px;
     margin-left: 5%;
 }
 
 .like {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
     color: green;
-    font-weight: bold;
 }
 
 .unlike {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
     color: darkred;
-    font-weight: bold;
+}
+
+.delete {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
 }
 
 .usrNm {
@@ -150,6 +143,14 @@ p {
 
 .date {
     color: lightgrey;
+}
+.liunl form button {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 

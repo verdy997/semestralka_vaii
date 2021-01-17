@@ -45,7 +45,15 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="unlike">Unlike</button>
-                                        <b><span style="color: green ">{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count())}}</span></b>
+                                        <b><span style="color: green ">{{ $post->likes->count() }}
+                                                {{ Str::plural('like', $post->likes->count())}}</span></b>
+                                    </form>
+                                @endif
+                                @if($post->ownedBy(auth()->user()))
+                                    <form action="{{ route('post.destroy', $post) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="delete">Delete</button>
                                     </form>
                                 @endif
                             </div>

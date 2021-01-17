@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
 
-        $post = Post::with(['user', 'likes'])->paginate(5); //collection
+        $post = Post::orderBy('created_at', 'desc')->with(['user', 'likes'])->paginate(5); //collection
 
         return view('post.index',[
                 'post' => $post
@@ -27,6 +27,14 @@ class PostController extends Controller
         $this->validate($request, ['body' => 'required']);
 
         $request->user()->post()->create([ 'body' => $request->body]);
+
+        return back();
+    }
+
+    public function destroy(Post $post)
+    {
+        
+        $post->delete();
 
         return back();
     }
