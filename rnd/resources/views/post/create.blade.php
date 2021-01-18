@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="blok">
+            <p class="title">Creating new random blog</p>
             <form action="{{ route('post') }}" method="post" class="mb-4">
                 @csrf
                 <div class="col-12">
@@ -27,9 +28,7 @@
                     </div>
                     @enderror
                 </div>
-                <div class="col-6 mb-2">
                     <button type="submit" class="btn btn-primary">Post</button>
-                </div>
             </form>
         </div>
     </div>

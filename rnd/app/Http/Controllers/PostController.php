@@ -32,7 +32,7 @@ class PostController extends Controller
             'tittle' => $request->tittle,
             'body' => $request->body]);
 
-        return back();
+        return redirect('/post');
     }
 
     public function create()
@@ -42,7 +42,8 @@ class PostController extends Controller
 
     public function show($id)
     {
-
+        $post = Post::find($id);
+        return view( 'post.show')->with('post', $post);
     }
 
     public function edit($id)

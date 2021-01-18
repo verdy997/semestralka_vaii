@@ -6,7 +6,7 @@
 
 body {
     /*background-color: #343a40;*/
-    background-image: url("../img/vikings.jpg");
+    background-image: url("../img/unicorn.jpg");
     background-repeat: no-repeat;
     background-color: black;
     background-position: center;
@@ -166,6 +166,15 @@ p {
     font-size: 25px;
     color: white;
     font-weight: bolder;
+}
+
+.profSettings a {
+    margin: 2%;
+}
+
+.formControl {
+    float: left;
+    margin-left: 30%;
 }
 
 

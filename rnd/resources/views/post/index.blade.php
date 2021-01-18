@@ -8,10 +8,11 @@
                 @foreach($post as $post)
                     <div class="postPckg">
                         <div class="bkgrPst">
-                            <b><a href="" class="usrNm">{{ $post->user->name }}</a></b>
+                            <b><a href="profile/{{ $post->user->name }}" class="usrNm">{{ $post->user->name }}</a></b>
                             <span class="date">{{ $post->created_at->diffForHumans() }}</span>
-                            <p class="title">{{ $post->tittle }}</p>
-
+                            <div>
+                                <a href="/post/{{$post->id}}" class="title">{{ $post->tittle }}</a>
+                            </div>
                             <div class="liunl">
                                 @if(!$post->likedBy(auth()->user()))
                                     <form action="{{ route('post.likes', $post) }}" method="post">
@@ -29,12 +30,12 @@
                                     </form>
                                 @endif
                                 @if($post->ownedBy(auth()->user()))
-                                    <form action="{{ route('post.destroy', $post) }}" method="post">
+                                    <form action="{{ route('post.destroy', $post) }}" method="post" class="formControl">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete">Delete</button>
                                     </form>
-                                    <form action="{{ route('post.edit', $post->id) }}" method="post">
+                                    <form action="{{ route('post.edit', $post->id) }}" method="post" class="formControl">
                                          @csrf
                                          <button type="submit" class="delete">Edit</button>
                                     </form>

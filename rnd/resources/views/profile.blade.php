@@ -7,9 +7,12 @@
                 {{ $user->name }}
             </div>
 
-            <div>
+            <div class="profSettings">
                 <a href="/post/create">+ Create new blog</a>
+                <a href="">+ Profile options</a>
             </div>
+
+
         </div>
     </div>
 
