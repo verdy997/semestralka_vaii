@@ -97,16 +97,18 @@ p {
 }
 
 .blok {
-    max-width: 50%;
+    max-width: 70%;
     margin: auto;
     background-color: rgba(52,58,64, 0.65);
     border-style: solid;
     border-radius: 15px;
+    text-align: center;
 }
 
 .col-12 {
     margin-bottom: 10px;
 }
+
 
 .bkgrPst {
     margin: 5%;
@@ -156,6 +158,12 @@ p {
     text-transform: uppercase;
     font-size: 30px;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    color: white;
+    font-weight: bolder;
+}
+
+.title {
+    font-size: 25px;
     color: white;
     font-weight: bolder;
 }

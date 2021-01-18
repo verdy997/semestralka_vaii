@@ -8,7 +8,7 @@
             </div>
 
             <div>
-                {{$user }}
+                <a href="/post/create">+ Create new blog</a>
             </div>
         </div>
     </div>

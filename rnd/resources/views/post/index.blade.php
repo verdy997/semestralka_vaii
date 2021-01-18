@@ -3,35 +3,14 @@
 @section('content')
     <div class="container">
         <div class="blok">
-            <form action="{{ route('post') }}" method="post" class="mb-4">
-                @csrf
-                <div class="col-12">
-                    <div class="textUnForm">
-                        <b><label for="body" style="color: white">Write your post</label></b>
-                    </div>
-                    <textarea class="form-control" name="body" id="body" cols="15" rows="5"
-                              placeholder="Write something"></textarea>
-                    @error('body')
-                    <div class="errorMessage">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="col-6 mb-2">
-                    <button type="submit" class="btn btn-primary">Post</button>
-                </div>
-            </form>
-
-            <div class>
-
-            </div>
+            <p class="title">Latest random blogs</p>
             @if($post->count())
                 @foreach($post as $post)
                     <div class="postPckg">
                         <div class="bkgrPst">
                             <b><a href="" class="usrNm">{{ $post->user->name }}</a></b>
                             <span class="date">{{ $post->created_at->diffForHumans() }}</span>
-                            <p class="mb-4">{{ $post->body }}</p>
+                            <p class="title">{{ $post->tittle }}</p>
 
                             <div class="liunl">
                                 @if(!$post->likedBy(auth()->user()))
@@ -54,6 +33,10 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="delete">Delete</button>
+                                    </form>
+                                    <form action="{{ route('post.edit', $post->id) }}" method="post">
+                                         @csrf
+                                         <button type="submit" class="delete">Edit</button>
                                     </form>
                                 @endif
                             </div>

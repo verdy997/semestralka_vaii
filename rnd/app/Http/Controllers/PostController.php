@@ -24,12 +24,31 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['body' => 'required']);
+        $this->validate($request, [
+            'tittle' => 'required|max:255',
+            'body' => 'required']);
 
         $request->user()->post()->create([
+            'tittle' => $request->tittle,
             'body' => $request->body]);
 
         return back();
+    }
+
+    public function create()
+    {
+        return view('post.create');
+    }
+
+    public function show($id)
+    {
+
+    }
+
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        return view('post.edit')->with('post', $post);
     }
 
     public function update(Request $request, $id)
@@ -43,4 +62,6 @@ class PostController extends Controller
 
         return back();
     }
+
+
 }
