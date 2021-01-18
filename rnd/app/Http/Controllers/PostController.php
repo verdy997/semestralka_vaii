@@ -26,14 +26,19 @@ class PostController extends Controller
     {
         $this->validate($request, ['body' => 'required']);
 
-        $request->user()->post()->create([ 'body' => $request->body]);
+        $request->user()->post()->create([
+            'body' => $request->body]);
 
         return back();
     }
 
+    public function update(Request $request, $id)
+    {
+
+    }
+
     public function destroy(Post $post)
     {
-        
         $post->delete();
 
         return back();

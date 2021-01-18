@@ -40,7 +40,7 @@
 
             @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ auth()->user()->name }}</a>
+                    <a class="nav-link" href="{{ route('profile.show', auth()->user()) }}">{{ auth()->user()->name }}</a>
                 </li>
                 <li class="nav-item">
                     @csrf

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LogInController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WallController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
@@ -29,6 +30,8 @@ Route::get('/logIn', [LogInController::class, 'index'])->name('logIn');
 Route::post('/logIn', [LogInController::class, 'store']);
 
 Route::get('/logOut', [LogOutController::class, 'store'])->name('logOut');
+
+Route::get('/profile/{user:name}', [ProfileController::class, 'index'])->name('profile.show');
 
 Route::get('/wall', [WallController::class, 'index'])->name('wall');
 
