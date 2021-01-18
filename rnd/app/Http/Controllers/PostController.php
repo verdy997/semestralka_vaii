@@ -54,7 +54,16 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'tittle' => 'required|max:255',
+            'body' => 'required']);
 
+        $post = Post::find($id);
+        $post->tittle = $request->input('tittle');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/post');
     }
 
     public function destroy(Post $post)

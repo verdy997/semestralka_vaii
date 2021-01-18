@@ -35,10 +35,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="delete">Delete</button>
                                     </form>
-                                    <form action="{{ route('post.edit', $post->id) }}" method="post" class="formControl">
-                                         @csrf
-                                         <button type="submit" class="delete">Edit</button>
-                                    </form>
+                                    <b><a href="/post/{{$post->id}}/edit" class="delete">Edit</a></b>
                                 @endif
                             </div>
                         </div>

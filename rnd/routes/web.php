@@ -40,6 +40,7 @@ Route::get('/post/create', [PostController::class, 'create']);
 Route::post('/post', [PostController::class, 'store']);
 Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
 Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
 

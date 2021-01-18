@@ -43,11 +43,9 @@
                     <a class="nav-link" href="{{ route('profile.show', auth()->user()) }}">{{ auth()->user()->name }}</a>
                 </li>
                 <li class="nav-item">
-                    @csrf
                     <a class="nav-link" href="{{ route('post') }}">Posts</a>
                 </li>
                 <li class="nav-item">
-                    @csrf
                     <a class="nav-link" href="{{ route('logOut') }}">Logout</a>
                 </li>
             @endauth
