@@ -181,7 +181,14 @@ p {
     margin-left: 30%;
 }
 
+box {
+    width: 20px;
+    margin: 0 auto;
+}
 
+.pagination {
+
+}
 
 
 

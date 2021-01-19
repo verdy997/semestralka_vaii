@@ -43,7 +43,6 @@ Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
 Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
-
 Route::post('/post/{post}/likes', [PostLikeController::class, 'store'])->name('post.likes');
 Route::delete('/post/{post}/likes', [PostLikeController::class, 'destroy'])->name('post.likes');
 

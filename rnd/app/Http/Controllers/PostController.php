@@ -14,13 +14,11 @@ class PostController extends Controller
 
     public function index()
     {
-
         $post = Post::orderBy('created_at', 'desc')->with(['user', 'likes'])->paginate(5); //collection
 
-        return view('post.index',[
-                'post' => $post
-        ]);
+        return view('post.index', compact('post'));
     }
+
 
     public function store(Request $request)
     {

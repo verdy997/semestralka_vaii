@@ -12,6 +12,13 @@
                     <a href="" class="bkgrPst">+ Profile options</a>
                 </div>
             @endif
+                <div class="profTitle">
+                    <b><p>{{ $user->profile->tittle }}</p></b>
+                </div>
+                <div>
+                    <p>{{ $user->profile->description }}</p>
+                </div>
+
         </div>
     </div>
 @endsection
