@@ -10,6 +10,9 @@
                 <div class="profSettings">
                     <a href="/post/create" class="bkgrPst">+ Create new blog</a>
                     <a href="" class="bkgrPst">+ Profile options</a>
+                    @if($user->name === 'admin')
+                        <a href="adminPage" class="bkgrPst">+ Admin options</a>
+                    @endif
                 </div>
             @endif
                 <div class="profTitle">

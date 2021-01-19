@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use DB;
 
 class PostController extends Controller
 {
@@ -16,9 +17,19 @@ class PostController extends Controller
     {
         $post = Post::orderBy('created_at', 'desc')->with(['user', 'likes'])->paginate(5); //collection
 
-        return view('post.index', compact('post'));
+        return view('post.index',[
+                'post' => $post
+        ]);
     }
 
+    public function getMorePosts(Request $request)
+    {
+        if ($request->ajax())
+        {
+            $post = DB::table('posts')->paginate(5);
+            return view('post.post_data', compact('post'))->render();
+        }
+    }
 
     public function store(Request $request)
     {
@@ -31,8 +42,6 @@ class PostController extends Controller
             'body' => $request->body]);
 
         return redirect('/post');
-
-        dd();
     }
 
     public function create()
@@ -42,8 +51,8 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $post = Post::find($id);
-        return view( 'post.show')->with('post', $post);
+        $posts = Post::find($id);
+        return view( 'post.show')->with('posts', $posts);
     }
 
     public function edit($id)
