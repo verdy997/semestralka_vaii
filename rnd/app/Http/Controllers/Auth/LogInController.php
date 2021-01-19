@@ -13,7 +13,6 @@ class LogInController extends Controller
         $this->middleware(['guest']);
     }
 
-
     public function index()
     {
         return view('auth.logIn');
@@ -30,7 +29,6 @@ class LogInController extends Controller
         {
             return back()->with('status', 'Invalid login details');
         }
-
 
         return redirect()->route('wall');
     }

@@ -33,6 +33,8 @@ class PostController extends Controller
             'body' => $request->body]);
 
         return redirect('/post');
+
+        dd();
     }
 
     public function create()
@@ -49,7 +51,10 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('post.edit')->with('post', $post);
+        if ($post->ownedBy(auth()->user()) || auth()->user()->name === 'admin'){
+            return view('post.edit')->with('post', $post);
+        }
+        return back();
     }
 
     public function update(Request $request, $id)
@@ -72,6 +77,4 @@ class PostController extends Controller
 
         return back();
     }
-
-
 }

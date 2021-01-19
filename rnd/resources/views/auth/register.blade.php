@@ -7,7 +7,6 @@
 
     <h1>Registration</h1>
 
-
     <div class="container">
         <div class="col-10">
             <form action="{{ route('register') }}" method="post">

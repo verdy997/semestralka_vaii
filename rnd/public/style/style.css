@@ -111,16 +111,20 @@ p {
 
 
 .bkgrPst {
-    margin: 5%;
+    padding: 1%;
     background-color: rgba(52,58,64, 0.75);
     border-style: solid;
     border-radius: 15px;
     text-align: center;
 }
 
+.bkgrPst a {
+    padding: 2px;
+    font-weight: bolder;
+}
+
 .liunl {
     height: 50px;
-    margin-left: 5%;
 }
 
 .like {

@@ -29,7 +29,7 @@
                                                 {{ Str::plural('like', $post->likes->count())}}</span></b>
                                     </form>
                                 @endif
-                                @if($post->ownedBy(auth()->user()))
+                                @if($post->ownedBy(auth()->user()) || auth()->user()->name === 'admin')
                                     <form action="{{ route('post.destroy', $post) }}" method="post" class="formControl">
                                         @csrf
                                         @method('DELETE')
@@ -47,7 +47,5 @@
             @endif
         </div>
     </div>
-
-
 
 @endsection

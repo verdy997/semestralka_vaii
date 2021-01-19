@@ -12,7 +12,6 @@
                     {{$post->body}}
                 </div>
             </div>
-
             <a href="/post" class="btn btn-default">Go back</a>
         </div>
     </div>

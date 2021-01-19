@@ -48,7 +48,7 @@ Route::post('/post/{post}/likes', [PostLikeController::class, 'store'])->name('p
 Route::delete('/post/{post}/likes', [PostLikeController::class, 'destroy'])->name('post.likes');
 
 Route::get('/', function () {
-    return view('auth.logIn');
+    return view('home');
 });
 
 

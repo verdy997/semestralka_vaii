@@ -12,6 +12,7 @@ class Profile extends Model
         'user_id'
     ];
 
+
     use HasFactory;
 
     public function user()
