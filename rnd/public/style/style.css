@@ -173,14 +173,14 @@ p {
 
 .profileName {
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 2vw;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
     color: white;
     font-weight: bolder;
 }
 
 .title {
-    font-size: 25px;
+    font-size: 1.5vw;
     color: white;
     font-weight: bolder;
 }
@@ -204,7 +204,10 @@ box {
     width: 33%;
 }
 
-
+.pagination {
+    margin-top: 2%;
+    margin-left: 40%;
+}
 
 
 
