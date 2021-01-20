@@ -9,10 +9,16 @@
             <br>
             @if($user == auth()->user())
                 <div class="profSettings">
-                    <a href="/post/create" class="bkgrPst">+ Create new blog</a>
-                    <a href="/profile/{{ $user->profile->id }}/profOption" class="bkgrPst">+ Profile options</a>
+                    <div class="profText">
+                        <a href="/post/create" class="bkgrPst">+ Create new blog</a>
+                    </div>
+                    <div class="profText">
+                        <a href="/profile/{{ $user->profile->id }}/profOption" class="bkgrPst">+ Profile options</a>
+                    </div>
                     @if($user->name === 'admin')
-                        <a href="{{ route('adminPage') }}" class="bkgrPst">+ Admin options</a>
+                        <div class="profText">
+                            <a href="{{ route('adminPage') }}" class="bkgrPst">+ Admin options</a>
+                        </div>
                     @endif
                 </div>
             @endif

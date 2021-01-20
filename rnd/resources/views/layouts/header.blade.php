@@ -70,41 +70,35 @@
 </body>
 
 <foother>
-    <div class="chngbtn">
-        <button id="btn-1" class="chan"></button>
-        <button id="btn-2" class="chan"></button>
-        <button id="btn-3" class="chan"></button>
-        <button id="btn-4" class="chan"></button>
-        <button id="btn-5" class="chan"></button>
-    </div>
-
     <script>
-        let btn1 = document.getElementById('btn-1');
-        let btn2 = document.getElementById('btn-2');
-        let btn3 = document.getElementById('btn-3');
-        let btn4 = document.getElementById('btn-4');
-        let btn5 = document.getElementById('btn-5');
+        window.onload=function() {
 
-        btn1.addEventListener('click',() => {
-            document.body.style.backgroundImage = "url('../img/eroSenin.jpg')";
-        });
+            let pom = Math.floor(Math.random() * 11);
 
-        btn2.addEventListener('click',() => {
-            document.body.style.backgroundImage = "url('../img/jungle.jpg')";
-        });
-
-        btn3.addEventListener('click',() => {
-            document.body.style.backgroundImage = "url('../img/ship.jpg')";
-        });
-
-        btn4.addEventListener('click',() => {
-            document.body.style.backgroundImage = "url('../img/space.jpg')";
-        });
-
-        btn5.addEventListener('click',() => {
-            document.body.style.backgroundImage = "url('../img/vikings.jpg')";
-        });
-
+            if(pom === 0){
+                document.body.style.backgroundImage = "url('../img/eroSenin.jpg')";
+            } else if (pom === 1) {
+                document.body.style.backgroundImage = "url('../img/jungle.jpg')";
+            } else if (pom === 2) {
+                document.body.style.backgroundImage = "url('../img/ship.jpg')";
+            } else if (pom === 3) {
+                document.body.style.backgroundImage = "url('../img/space.jpg')";
+            } else if (pom === 4) {
+                document.body.style.backgroundImage = "url('../img/vikings.jpg')";
+            } else if (pom === 5) {
+                document.body.style.backgroundImage = "url('../img/got.jpg')";
+            } else if (pom === 6) {
+                document.body.style.backgroundImage = "url('../img/venom.jpg')";
+            } else if (pom === 7) {
+                document.body.style.backgroundImage = "url('../img/japan.jpg')";
+            } else if (pom === 8) {
+                document.body.style.backgroundImage = "url('../img/lotr.jpg')";
+            } else if (pom === 9) {
+                document.body.style.backgroundImage = "url('../img/wow.jpg')";
+            } else if (pom === 10) {
+                document.body.style.backgroundImage = "url('../img/pirates.jpg')";
+            }
+        };
     </script>
 </foother>
 </html>

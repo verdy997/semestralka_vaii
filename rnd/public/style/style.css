@@ -199,6 +199,11 @@ box {
     margin: 0 auto;
 }
 
+.profText {
+    float: left;
+    width: 33%;
+}
+
 
 
 
