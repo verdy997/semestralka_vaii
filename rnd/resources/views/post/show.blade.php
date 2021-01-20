@@ -5,11 +5,11 @@
     <div class="container">
         <div class="blok">
             <div class="profileName">
-                <h1>{{$posts->tittle}}</h1>
+                <h1>{{$post->tittle}}</h1>
             </div>
             <div class="bkgrPst">
                 <div class="textUnForm">
-                    {{$posts->body}}
+                    {{$post->body}}
                 </div>
             </div>
             <a href="/post" class="btn btn-default">Go back</a>

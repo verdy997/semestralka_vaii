@@ -24,11 +24,7 @@ class PostController extends Controller
 
     public function getMorePosts(Request $request)
     {
-        if ($request->ajax())
-        {
-            $post = DB::table('posts')->paginate(5);
-            return view('post.post_data', compact('post'))->render();
-        }
+        dd($request);
     }
 
     public function store(Request $request)
@@ -52,7 +48,9 @@ class PostController extends Controller
     public function show($id)
     {
         $posts = Post::find($id);
-        return view( 'post.show')->with('posts', $posts);
+        return view('post.show',[
+            'post' => $posts
+        ]);
     }
 
     public function edit($id)
