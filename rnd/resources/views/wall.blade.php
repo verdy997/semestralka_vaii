@@ -20,4 +20,7 @@
             </div>
         </div>
     </div>
+
+
+    <script src="/rnd/public/scripts/change.js"></script>
 @endsection

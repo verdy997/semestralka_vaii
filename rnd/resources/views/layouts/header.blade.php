@@ -14,7 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
             integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/style.css">
-
 </head>
 <body>
 
@@ -65,6 +64,47 @@
     </div>
 </nav>
 
+
+
 @yield('content')
 </body>
+
+<foother>
+    <div class="chngbtn">
+        <button id="btn-1" class="chan"></button>
+        <button id="btn-2" class="chan"></button>
+        <button id="btn-3" class="chan"></button>
+        <button id="btn-4" class="chan"></button>
+        <button id="btn-5" class="chan"></button>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById('btn-1');
+        let btn2 = document.getElementById('btn-2');
+        let btn3 = document.getElementById('btn-3');
+        let btn4 = document.getElementById('btn-4');
+        let btn5 = document.getElementById('btn-5');
+
+        btn1.addEventListener('click',() => {
+            document.body.style.backgroundImage = "url('../img/eroSenin.jpg')";
+        });
+
+        btn2.addEventListener('click',() => {
+            document.body.style.backgroundImage = "url('../img/jungle.jpg')";
+        });
+
+        btn3.addEventListener('click',() => {
+            document.body.style.backgroundImage = "url('../img/ship.jpg')";
+        });
+
+        btn4.addEventListener('click',() => {
+            document.body.style.backgroundImage = "url('../img/space.jpg')";
+        });
+
+        btn5.addEventListener('click',() => {
+            document.body.style.backgroundImage = "url('../img/vikings.jpg')";
+        });
+
+    </script>
+</foother>
 </html>

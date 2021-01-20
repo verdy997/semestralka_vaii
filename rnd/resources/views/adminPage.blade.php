@@ -12,26 +12,28 @@
                                                    data-bs-toggle="modal" data-bs-target="#UsersModal">+Add</a>
                         </div>
                         <div class="card-body">
-                            <table id="userTable" class="table">
-                                <thead>
+                            <div class="table-responsive">
+                                <table id="userTable" class="table table-dark">
+                                    <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th>Action</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($users as $user)
-                                    <tr id="uid{{$user->id}}">
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->password}}</td>
-                                        <td><a href="javascript:void(0)" onclick="deleteUser({{$user->id}})" class="btn btn-danger">Delete</a></td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($users as $user)
+                                        <tr id="uid{{$user->id}}">
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->password}}</td>
+                                            <td><a href="javascript:void(0)" onclick="deleteUser({{$user->id}})" class="btn btn-danger">Delete</a></td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

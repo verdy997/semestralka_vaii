@@ -6,11 +6,24 @@
 
 body {
     /*background-color: #343a40;*/
-    background-image: url("../img/unicorn.jpg");
+    background-image: url("../img/space.jpg");
     background-repeat: no-repeat;
     background-color: black;
     background-position: center;
     background-position-y: 80px;
+
+}
+.chngbtn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.chan {
+    color: white;
+    height: 15px;
+    width: 15px;
+    margin: 5px;
 
 }
 
@@ -185,11 +198,6 @@ box {
     width: 20px;
     margin: 0 auto;
 }
-
-.pagination {
-
-}
-
 
 
 
