@@ -24,12 +24,20 @@
                                     </thead>
                                     <tbody>
                                     @foreach($users as $user)
-                                        <tr id="uid{{$user->id}}">
-                                            <td>{{$user->name}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td>{{$user->password}}</td>
-                                            <td><a href="javascript:void(0)" onclick="deleteUser({{$user->id}})" class="btn btn-danger">Delete</a></td>
-                                        </tr>
+                                        @if($user->id === 16)
+                                            <tr id="uid{{$user->id}}">
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->password}}</td>
+                                            </tr>
+                                        @else
+                                            <tr id="uid{{$user->id}}">
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->password}}</td>
+                                                <td><a href="javascript:void(0)" onclick="deleteUser({{$user->id}})" class="btn btn-danger">Delete</a></td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>
