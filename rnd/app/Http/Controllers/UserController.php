@@ -57,8 +57,13 @@ class UserController extends Controller
     public function deleteUser($id)
     {
         $user = User::find($id);
-        $user->delete();
-        return response()->json(['success'=>'Record has been deleted']);
+        if(!$user->name === 'admin'){
+            $user->delete();
+            return response()->json(['success'=>'Record has been deleted']);
+        }else {
+            return redirect()->route('wall');
+        }
+
     }
 
 }
